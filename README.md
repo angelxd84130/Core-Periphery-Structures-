@@ -17,3 +17,5 @@ https://link.springer.com/chapter/10.1007/978-3-662-44753-6_25
 4. Dataset sourse: http://snap.stanford.edu/data/
 
 5. Changes to the dataset: We modify the dataset format from integer to variable for the first two columns in order to fit in the requirement of generating a graph using networkx.
+
+6. In order to install the packages all succuessfully, the user has to install a c++ complier before pip install operation. Otherwise, the required packages are not allowed to be installed into your environment.
