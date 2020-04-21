@@ -37,4 +37,5 @@ nx.draw_networkx_labels(M, pos)
 
 plt.gca().axis('off')
 plt.title("ramdom graph-ER")
-plt.show()
+#plt.show()
+plt.savefig('test.png')
