@@ -3,7 +3,7 @@ import pandas as pd
 import cpalgorithm as cp
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('/Users/HJY/Downloads/Using dataset.csv', sep = ',')     #load data from dataset
+df = pd.read_csv('Using dataset.csv', sep=',')     #load data from dataset
 
 G = nx.from_pandas_edgelist(df)
 M = nx.erdos_renyi_graph(80, 0.1)
@@ -14,9 +14,14 @@ algorithm.detect(M)
 c = algorithm.get_pair_id()
 x = algorithm.get_coreness()
 
-print('Name\tPairID\tCoreness')
+file = open("test.txt", "w")
+
+#print('Name\tPairID\tCoreness')
+file.write('Name\tPairID\tCoreness\n')
 for key, value in sorted(c.items(), key=lambda x: x[1]):
-    print('%s\t%d\t%f' %(key, c[key], x[key]))
+    #print('%s\t%d\t%f' %(key, c[key], x[key]))
+    file.write('%s\t%d\t%f\n' %(key, c[key], x[key]))
+file.close()
 
 plt.figure(3,figsize=(8,6))
 cmap = plt.cm.get_cmap('Set1')
@@ -33,4 +38,3 @@ nx.draw_networkx_labels(M, pos)
 plt.gca().axis('off')
 plt.title("ramdom graph-ER")
 plt.show()
-
